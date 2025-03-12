@@ -1,0 +1,18 @@
+<div class="container mt-5 backgroud-white p-5 rounded">
+    <div class="w-5 h-2">
+        <h1 class="text-center">Cadastro de Local</h1>
+        <hr>
+        <form [formGroup]="local" (ngSubmit)="cadastrar()">
+
+            <label class="form-label mb-0">Nome</label>
+            <input type="text" class="form-control" formControlName="nome" placeholder="Insira um nome">
+
+            <label class="form-label mt-1 mb-0">endereco</label>
+            <input type="text" class="form-control" formControlName="endereco" placeholder="Insira uma endereco">
+
+            <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-primary" type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>

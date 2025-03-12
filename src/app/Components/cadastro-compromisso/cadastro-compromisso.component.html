@@ -1,0 +1,35 @@
+<div class="container mt-5 backgroud-white p-5 rounded">
+    <div class="w-5 h-2">
+        <h1 class="text-center">Cadastro de Compromisso</h1>
+        <hr>
+        <form [formGroup]="compromisso" (ngSubmit)="cadastrar()">
+
+            <label class="form-label mb-0">titulo</label>
+            <input type="text" class="form-control" formControlName="titulo" placeholder="Insira um título">
+
+            <label class="form-label mt-1 mb-0">descricao</label>
+            <input type="text" class="form-control" formControlName="descricao" placeholder="Insira uma descricao">
+
+            <label class="form-label mt-1 mb-0">data</label>
+            <input type="date" class="form-control" formControlName="data" placeholder="Insira uma data">
+
+            <label class="form-label mt-1 mb-0">hora</label>
+            <input type="datetime" class="form-control" formControlName="hora"
+                placeholder="Insira quantas horas seu evento vai durar">
+
+            <label class="form-label mt-1 mb-0">Local</label>
+            <select formControlName="localId" class="form-control">
+                <option *ngFor="let l of locaisRegistrados" [ngValue]="l.id">{{l.nome}}</option>
+            </select>
+
+            <label class="form-label mt-1 mb-0">Contato</label>
+            <select formControlName="contatoId" class="form-control">
+                <option *ngFor="let c of contatosRegistrados" [ngValue]="c.id">{{c.nome}}</option>
+            </select>
+
+            <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-primary" type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
