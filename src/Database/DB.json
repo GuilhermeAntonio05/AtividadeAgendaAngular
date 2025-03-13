@@ -1,51 +1,20 @@
 {
-  "compromisso": [],
+  "compromisso": [
+   
+  ],
   "contato": [
-    {
-      "id": "1c78",
-      "nome": "123",
-      "telefone": "123",
-      "email": "123"
-    }
+    
   ],
   "local": [
-    {
-      "id": "d872",
-      "nome": "teste1",
-      "endereco": "teste1"
-    },
-    {
-      "id": "2238",
-      "nome": "teste2",
-      "endereco": "teste2"
-    },
-    {
-      "id": "71c7",
-      "nome": "teste3",
-      "endereco": "teste3"
-    }
+   
   ],
   "usuario": [
     {
-      "id": "eed3",
-      "nome": "123",
-      "email": "123",
-      "telefone": "123",
-      "permissao": "comum"
-    },
-    {
-      "id": "0420",
-      "nome": "guilherme",
-      "email": "guilherme@gmail.com",
-      "senha": "guilherme",
-      "permissao": "comum"
-    },
-    {
-      "id": "4223",
-      "nome": "marcos",
-      "email": "marcos",
-      "senha": "marcos",
-      "permissao": "comum"
+      "id": "9fa5",
+      "name": "testeGui",
+      "email": "testeGui@gmail.com",
+      "password": "testeGui",
+      "role": "user"
     }
   ]
 }

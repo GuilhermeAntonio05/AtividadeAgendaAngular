@@ -11,17 +11,24 @@ import { Usuario } from '../../interfaces/usuario';
   styleUrl: './pag-cadastro.component.css'
 })
 export class PagCadastroComponent {
+  private readonly PROFESSOR_API = "https://api-users-gdsb.onrender.com/register"
   private readonly API = "http://localhost:3000/usuario"
   constructor(private router: Router, private http: HttpClient) { }
 
   login = new FormGroup({
-    nome: new FormControl(""),
+    name: new FormControl(""),
     email: new FormControl(""),
-    senha: new FormControl(""),
-    permissao: new FormControl("comum")
+    password: new FormControl(""),
+    role: new FormControl("user")
   });
 
   cadastrar() {
+    
+    this.http.post<Usuario>(this.PROFESSOR_API, this.login.value).subscribe(
+      response => console.log("Sucesso:", response),
+      error => console.error("Erro:", error)
+    );
+
     this.http.post<Usuario>(this.API, this.login.value).subscribe(
       response => console.log("Sucesso:", response),
       error => console.error("Erro:", error)

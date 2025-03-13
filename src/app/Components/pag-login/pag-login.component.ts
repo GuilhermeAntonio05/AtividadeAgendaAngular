@@ -12,25 +12,33 @@ import { Usuario } from '../../interfaces/usuario';
 })
 export class PagLoginComponent {
   private readonly API = "http://localhost:3000/usuario"
+  private readonly PROFESSOR_API = "https://api-users-gdsb.onrender.com/login"
+
   constructor(private router: Router, private http: HttpClient) { }
 
   informacoesLogin: Usuario[] = []
 
-
   login = new FormGroup({
-    nome: new FormControl(""),
-    senha: new FormControl(""),
+    email: new FormControl(""),
+    password: new FormControl(""),
   });
 
   logar() {
+    this.http.post<Usuario>(this.PROFESSOR_API, this.login.value).subscribe(response => localStorage.setItem("token", `${response.token}`))
+
     this.http.get<Usuario[]>(this.API).subscribe(data => {
       this.informacoesLogin = data;
 
       const usuarioEncontrado = this.informacoesLogin.find(
-        usuario => usuario.nome == this.login.value.nome && usuario.senha == this.login.value.senha
+        usuario => usuario.email == this.login.value.email && usuario.password == this.login.value.password
+      );
+
+      const valorIndex = this.informacoesLogin.findIndex(
+        usuario => usuario.email == this.login.value.email && usuario.password == this.login.value.password
       );
 
       if (usuarioEncontrado) {
+        localStorage.setItem("UserID",`${this.informacoesLogin[valorIndex].id}`)
         this.router.navigate(['/lista']);
       } else {
         alert("Usuário não encontrado!");

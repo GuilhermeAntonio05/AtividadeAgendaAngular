@@ -4,20 +4,20 @@
         <hr>
         <form [formGroup]="login" (ngSubmit)="logar()" src="lista">
 
-            <label class="form-label mb-0">Nome</label>
-            <input type="text" class="form-control" formControlName="nome" placeholder="Insira seu nome">
+            <label class="form-label mb-0">email</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Insira seu email">
 
             <label class="form-label mt-1 mb-0">senha</label>
-            <input type="password" class="form-control" formControlName="senha" placeholder="Insira sua senha">
+            <input type="password" class="form-control" formControlName="password" placeholder="Insira sua senha">
 
             <div class="d-grid gap-2 mt-3">
                 <button class="btn btn-primary" type="submit">Salvar</button>
             </div>
         </form>
 
-<div>
-   <button (click)="cadastrar()">Não tem cadastro?</button> 
-</div>
+        <div>
+            <button (click)="cadastrar()">Não tem cadastro?</button>
+        </div>
 
     </div>
 </div>

@@ -1,7 +1,8 @@
 export interface Usuario {
+    token: string;
     id: number; 
-    nome: string; 
+    name: string; 
     email: string; 
-    senha: string; 
-    nivelAcesso: 'admin' | 'usuario'; 
+    password: string; 
+    role: 'adm' | 'user'; 
 }

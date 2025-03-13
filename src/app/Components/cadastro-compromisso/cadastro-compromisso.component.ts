@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Local } from '../../interfaces/local';
 import { Contato } from '../../interfaces/contato';
+import { Usuario } from '../../interfaces/usuario';
 
 @Component({
   selector: 'app-cadastro-compromisso',
@@ -17,9 +18,11 @@ export class CadastroCompromissoComponent implements OnInit{
   private readonly API = 'http://localhost:3000/compromisso';
   private readonly APILOCAL = 'http://localhost:3000/local';
   private readonly APICONTATO = 'http://localhost:3000/contato';
+  private readonly APIUSUARIO = 'http://localhost:3000/usuario';
 
   locaisRegistrados: Local[] = [];
   contatosRegistrados: Contato[] = [];
+  constructor(private router: Router, private http: HttpClient) { }
 
   compromisso = new FormGroup({
     titulo: new FormControl(""),
@@ -28,10 +31,9 @@ export class CadastroCompromissoComponent implements OnInit{
     hora: new FormControl(""),
     contatoId: new FormControl(""),
     localId: new FormControl(""),
-    usuarioId: new FormControl("") // adicionar função que registra o usuario logado
+    usuarioId: new FormControl(localStorage.getItem("UserID")) // adicionar função que registra o usuario logado
   });
   
-  constructor(private router: Router, private http: HttpClient) { }
  
   ngOnInit(): void {
    this.http.get<Local[]>(this.APILOCAL).subscribe(data => {this.locaisRegistrados = data})
