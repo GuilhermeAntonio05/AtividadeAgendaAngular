@@ -1,0 +1,16 @@
+<div class="container mt-5 backgroud-white p-5 rounded">
+    <div class="w-5 h-2">
+        <h1 class="text-center">Deletar</h1>
+        <hr>
+        <p>Você deseja deletar:</p>
+        <ul>
+            <li *ngFor="let v of valor">{{v}}</li>
+        </ul>
+<hr>
+<div>
+    <button (click)="excluir()">Confirmar</button>
+    <button (click)="cancelar()">Cancelar</button>
+</div>
+        
+    </div>
+</div>

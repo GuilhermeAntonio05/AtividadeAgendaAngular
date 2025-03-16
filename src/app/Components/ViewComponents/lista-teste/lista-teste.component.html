@@ -1,0 +1,30 @@
+<div class="container mt-3 mb-3 backgroud-white p-5 rounded">
+    <div class="w-5 h-2">
+        <h1 class="text-center">Agenda Online</h1>
+        <hr>
+        <div class="text-center">
+            <button (click)="cadCompromisso()">Adicionar Compromisso</button>
+            <button (click)="cadLocal()">Adicionar Local</button>
+            <button (click)="cadContato()">Adicionar Contato</button>
+        </div>
+        <hr>
+
+        <ul>
+            <li *ngFor="let c of compromisso">
+                <div class="conteudoAgenda">
+                    <div>
+                        <h3>{{c.titulo}}</h3>
+                        <p>{{c.descricao}}</p>
+                        <p>{{c.data}}</p>
+                        <button (click)="visualizar(c.id)">visualizar</button>
+                    </div>
+
+                    <div class="icones">
+                        <button>Editar</button>
+                        <button (click)="deletar(c.id)">Deletar</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

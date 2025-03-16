@@ -1,0 +1,31 @@
+<div class="container mt-5 backgroud-white p-5 rounded">
+    <div class="w-5 h-2">
+        <h1 class="text-center">Descrição</h1>
+        <hr>
+
+        <ul>
+            <li>
+                <div class="conteudoAgenda">
+                    <div>
+                        <h6>#{{compromisso.id}}</h6>
+                        <h2>{{compromisso.titulo}}</h2>
+                        <p>{{compromisso.data}}</p>
+                        <p>{{compromisso.descricao}}</p>
+                        <p>{{compromisso.hora}}</p>
+                        Adicionar mais coisas Aqui!
+                    </div>
+
+                    <div class="icones">
+                        <div class="backButton">
+                            <button (click)="pagInical()"><-Voltar</button>
+                        </div>
+                        <div class="botoes">
+                            <button>Editar</button>
+                            <button (click)="deletar()">Deletar</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

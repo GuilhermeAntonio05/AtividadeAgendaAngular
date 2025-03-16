@@ -1,6 +1,13 @@
-body{
-    background-color: gray;
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.backgroud-white{
-    background-color: white;
+
+body {
+  background-color: gray;
+}
+
+.backgroud-white {
+  background-color: white;
 }

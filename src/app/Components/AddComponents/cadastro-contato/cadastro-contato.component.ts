@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Contato } from '../../interfaces/contato';
+import { Contato } from '../../../interfaces/contato';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';

@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, NgModule, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgModel, ReactiveFormsModule } from '@angular/forms';
-import { Compromisso } from '../../interfaces/compromisso';
+import { Compromisso } from '../../../interfaces/compromisso';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Local } from '../../interfaces/local';
-import { Contato } from '../../interfaces/contato';
-import { Usuario } from '../../interfaces/usuario';
+import { Local } from '../../../interfaces/local';
+import { Contato } from '../../../interfaces/contato';
+import { Usuario } from '../../../interfaces/usuario';
 
 @Component({
   selector: 'app-cadastro-compromisso',

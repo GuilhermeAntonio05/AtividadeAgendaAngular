@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Local } from '../../interfaces/local';
+import { Local } from '../../../interfaces/local';
 import { Router } from '@angular/router';
 
 @Component({

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario } from '../../interfaces/usuario';
+import { Usuario } from '../../../interfaces/usuario';
 
 @Component({
   selector: 'app-pag-login',
