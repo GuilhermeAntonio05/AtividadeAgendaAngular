@@ -1,57 +1,71 @@
 {
   "compromisso": [
     {
-      "id": "8a72",
-      "titulo": "título",
-      "descricao": "testeCompromisso",
-      "data": "2025-03-15",
-      "hora": "12 horas",
-      "contatoId": "3b37",
-      "localId": "b089",
-      "usuarioId": "9394"
+      "id": "5dad",
+      "titulo": "teste",
+      "descricao": "teste",
+      "data": "2025-03-18",
+      "hora": "21:48",
+      "contatoId": "4e7b",
+      "localId": "ed02",
+      "usuarioId": "7e6b"
     },
     {
-      "id": "bbab",
-      "titulo": "título 2",
-      "descricao": "teste de número 2",
-      "data": "2025-03-15",
-      "hora": "qualquer uma",
-      "contatoId": "3b37",
-      "localId": "b089",
-      "usuarioId": "9394"
+      "id": "e655",
+      "titulo": "testeIsac",
+      "descricao": "IsacMeuPato",
+      "data": "",
+      "hora": "",
+      "contatoId": "",
+      "localId": "",
+      "usuarioId": "7e6b"
     },
     {
-      "id": "63f3",
-      "titulo": "teste2",
-      "descricao": "teste2",
-      "data": "2025-03-16",
-      "hora": "1 horas",
-      "contatoId": "3b37",
-      "localId": "b089",
-      "usuarioId": "9394"
+      "id": "7e59",
+      "titulo": "testeDaniel",
+      "descricao": "testedaniel",
+      "data": "2025-03-19",
+      "hora": "12:30",
+      "contatoId": "4e7b",
+      "localId": "ed02",
+      "usuarioId": "7e6b"
     }
   ],
   "contato": [
     {
-      "id": "3b37",
-      "nome": "testeContato",
-      "telefone": "47999999",
-      "email": "testeContato@gmail.com"
+      "id": "4e7b",
+      "nome": "teste",
+      "telefone": "teste",
+      "email": "teste"
     }
   ],
   "local": [
     {
-      "id": "b089",
-      "nome": "testeLocal",
-      "endereco": "testeLocal"
+      "id": "ed02",
+      "nome": "teste",
+      "endereco": "teste"
     }
   ],
   "usuario": [
     {
-      "id": "9394",
-      "name": "testeGuilherme",
-      "email": "testeGuilherme@gmail.com",
-      "password": "testeGuilherme",
+      "id": "3a40",
+      "name": "guilhermeAdm",
+      "email": "guilhermeAdm@gmail.com",
+      "password": "guilhermeAdm",
+      "role": "admin"
+    },
+    {
+      "id": "7e6b",
+      "name": "guilherme",
+      "email": "guilherme@gmail.com",
+      "password": "guilherme",
+      "role": "user"
+    },
+    {
+      "id": "015c",
+      "name": "testeGuilherme2",
+      "email": "testeGuilherme2@gmail.com",
+      "password": "testeGuilherme2",
       "role": "user"
     }
   ]

@@ -11,20 +11,25 @@ import { Router } from '@angular/router';
 })
 export class DelPageComponent implements OnInit {
   private readonly API = "http://localhost:3000/compromisso"
+
+  //deletar
+  private readonly testeAPI = "http://localhost:3000/contato"
+
   objetoRequisicao: any[] = [];
   valor: any[][] = [];
 
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-     this.http.get<any>(this.API.concat(`/${localStorage.getItem("compromissoID")}`)).subscribe(data => { this.valor = Object.entries(data)})
+    this.http.get<any>(this.API.concat(`/${localStorage.getItem("compromissoID")}`)).subscribe(data => { this.valor = Object.entries(data) })
+    //this.http.get<any>(this.testeAPI.concat(`/3b37`)).subscribe(data => { this.valor = Object.entries(data) })
   }
 
-  excluir(){
+  excluir() {
     this.http.delete<any>(this.API.concat(`/${localStorage.getItem("compromissoID")}`)).subscribe()
     this.router.navigate(["/lista"])
   }
-  cancelar(){
+  cancelar() {
     this.router.navigate(["/lista"])
   }
 }

@@ -1,4 +1,8 @@
 <div class="container mt-3 mb-3 backgroud-white p-5 rounded">
+    <div class="d-flex justify-content-end">
+        <button (click)="logout()">Logout</button>
+    </div>
+
     <div class="w-5 h-2">
         <h1 class="text-center">Agenda Online</h1>
         <hr>
@@ -20,7 +24,7 @@
                     </div>
 
                     <div class="icones">
-                        <button>Editar</button>
+                        <button (click)="editar(c.id)">Editar</button>
                         <button (click)="deletar(c.id)">Deletar</button>
                     </div>
                 </div>

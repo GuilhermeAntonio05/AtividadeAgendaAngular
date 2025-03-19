@@ -25,26 +25,25 @@ export class PagLoginComponent {
 
   logar() {
     this.http.post<Usuario>(this.PROFESSOR_API, this.login.value).subscribe(response => localStorage.setItem("token", `${response.token}`))
-
-    this.http.get<Usuario[]>(this.API).subscribe(data => {
-      this.informacoesLogin = data;
-
-      const usuarioEncontrado = this.informacoesLogin.find(
-        usuario => usuario.email == this.login.value.email && usuario.password == this.login.value.password
-      );
-
-      const valorIndex = this.informacoesLogin.findIndex(
-        usuario => usuario.email == this.login.value.email && usuario.password == this.login.value.password
-      );
-
-      if (usuarioEncontrado) {
-        localStorage.setItem("UserID",`${this.informacoesLogin[valorIndex].id}`)
-        this.router.navigate(['/lista']);
-      } else {
-        alert("Usuário não encontrado!");
-      }
-    });
+    /*
+        this.http.get<Usuario[]>(this.API).subscribe(data => {
+          this.informacoesLogin = data;
+    
+          const usuarioEncontrado = this.informacoesLogin.find(
+            usuario => usuario.email == this.login.value.email && usuario.password == this.login.value.password
+          );
+    
+          const valorIndex = this.informacoesLogin.findIndex(
+            usuario => usuario.email == this.login.value.email && usuario.password == this.login.value.password
+          );
+    */
+    //if (usuarioEncontrado) {
+    this.router.navigate(['/lista']);
+    //   } else {
+    ////    alert("Usuário não encontrado!");
+    //  }
   }
+
 
   cadastrar() {
     this.router.navigate(['/cadastroUsuario'])

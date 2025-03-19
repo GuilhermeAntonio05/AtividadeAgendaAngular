@@ -4,7 +4,9 @@
         <hr>
         <p>Você deseja deletar:</p>
         <ul>
-            <li *ngFor="let v of valor">{{v}}</li>
+            <li *ngFor="let v of valor">
+                <p><b>{{v[0]}}:</b> {{v[1]}}</p>
+            </li>
         </ul>
 <hr>
 <div>

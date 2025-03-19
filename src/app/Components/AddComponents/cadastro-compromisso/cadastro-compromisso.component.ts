@@ -31,7 +31,7 @@ export class CadastroCompromissoComponent implements OnInit{
     hora: new FormControl(""),
     contatoId: new FormControl(""),
     localId: new FormControl(""),
-    usuarioId: new FormControl(localStorage.getItem("UserID")) // adicionar função que registra o usuario logado
+    usuarioId: new FormControl(localStorage.getItem("userID")) // adicionar função que registra o usuario logado
   });
   
  

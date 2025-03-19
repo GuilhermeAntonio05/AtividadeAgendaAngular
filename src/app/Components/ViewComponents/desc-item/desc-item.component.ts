@@ -26,4 +26,8 @@ export class DescItemComponent implements OnInit {
   deletar() {
     this.router.navigate(["/delPage"])  
   }
+
+  editar() {
+    this.router.navigate(["/updatePage"])  
+  }
 }
