@@ -23,8 +23,8 @@ export class PagLoginComponent {
     password: new FormControl(""),
   });
 
-  logar() {
-    this.http.post<Usuario>(this.PROFESSOR_API, this.login.value).subscribe(response => localStorage.setItem("token", `${response.token}`))
+  async logar() {
+   this.http.post<Usuario>(this.PROFESSOR_API, this.login.value).subscribe(response => {localStorage.setItem("token", `${response.token}`),this.router.navigate(['/listaComponentes']);})
     /*
         this.http.get<Usuario[]>(this.API).subscribe(data => {
           this.informacoesLogin = data;
@@ -38,7 +38,7 @@ export class PagLoginComponent {
           );
     */
     //if (usuarioEncontrado) {
-    this.router.navigate(['/lista']);
+    
     //   } else {
     ////    alert("Usuário não encontrado!");
     //  }

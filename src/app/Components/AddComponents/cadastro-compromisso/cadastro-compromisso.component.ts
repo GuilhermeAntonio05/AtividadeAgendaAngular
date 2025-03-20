@@ -10,11 +10,11 @@ import { Usuario } from '../../../interfaces/usuario';
 
 @Component({
   selector: 'app-cadastro-compromisso',
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './cadastro-compromisso.component.html',
   styleUrl: './cadastro-compromisso.component.css'
 })
-export class CadastroCompromissoComponent implements OnInit{
+export class CadastroCompromissoComponent implements OnInit {
   private readonly API = 'http://localhost:3000/compromisso';
   private readonly APILOCAL = 'http://localhost:3000/local';
   private readonly APICONTATO = 'http://localhost:3000/contato';
@@ -33,15 +33,15 @@ export class CadastroCompromissoComponent implements OnInit{
     localId: new FormControl(""),
     usuarioId: new FormControl(localStorage.getItem("userID")) // adicionar função que registra o usuario logado
   });
-  
- 
+
+
   ngOnInit(): void {
-   this.http.get<Local[]>(this.APILOCAL).subscribe(data => {this.locaisRegistrados = data})
-   this.http.get<Contato[]>(this.APICONTATO).subscribe(data => {this.contatosRegistrados = data})
+    this.http.get<Local[]>(this.APILOCAL).subscribe(data => { this.locaisRegistrados = data })
+    this.http.get<Contato[]>(this.APICONTATO).subscribe(data => { this.contatosRegistrados = data })
   }
 
   cadastrar() {
     this.http.post<Compromisso>(this.API, this.compromisso.value).subscribe();
-    this.router.navigate(['lista'])
+    this.router.navigate(['listaComponentes'])
   }
 }

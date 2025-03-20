@@ -1,0 +1,28 @@
+<div class="container mt-5 backgroud-white p-5 rounded">
+    <div class="w-5 h-2">
+        <h1 class="text-center">Descrição</h1>
+        <hr>
+
+        <ul>
+            <li>
+                <div class="conteudoAgenda">
+                    <div>
+                        <h6>#{{local.id}}</h6>
+                        <h2>{{local.nome}}</h2>
+                        <p>{{local.endereco}}</p>
+                    </div>
+
+                    <div class="icones">
+                        <div class="backButton">
+                            <button (click)="pagInical()"><-Voltar</button>
+                        </div>
+                        <div class="botoes">
+                            <button (click)="editar()">Editar</button>
+                            <button (click)="deletar()">Deletar</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

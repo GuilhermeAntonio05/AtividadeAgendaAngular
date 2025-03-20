@@ -22,6 +22,6 @@ private readonly API = 'http://localhost:3000/local';
 
   cadastrar() {
     this.http.post<Local>(this.API, this.local.value).subscribe();
-    this.router.navigate(['lista'])
+    this.router.navigate(['listaLocais'])
   }
 }

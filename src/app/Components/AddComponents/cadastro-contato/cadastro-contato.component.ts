@@ -16,14 +16,14 @@ export class CadastroContatoComponent {
   contato = new FormGroup({
     nome: new FormControl(""),
     telefone: new FormControl(""),
-    email: new FormControl("")
+    email: new FormControl(""),
+    usuarioId:new FormControl(localStorage.getItem("userID"))
   });
 
   constructor(private router: Router, private http: HttpClient) { }
 
   cadastrar() {
     this.http.post<Contato>(this.API, this.contato.value).subscribe();
-    this.router.navigate(['lista'])
-
+    this.router.navigate(['listaContatos'])
   }
 }

@@ -23,6 +23,6 @@ export class UpdatePageComponent implements OnInit {
 
   salvar() {
     this.http.put<any>(this.API.concat(`/${localStorage.getItem("compromissoID")}`),Object.fromEntries(this.valor)).subscribe()
-    this.router.navigate(["/lista"])
+    this.router.navigate(["/listaComponentes"])
   }
 }

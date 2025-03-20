@@ -1,0 +1,19 @@
+<div class="container mt-5 backgroud-white p-5 rounded">
+    <div class="w-5 h-2">
+        <h1 class="text-center">Edição</h1>
+        <hr>
+
+        <ul *ngFor="let v of valor">
+            <li>
+                <label class="form-label">{{v[0]}}</label> <br>
+                <input type="text" class="form-control" [(ngModel)]="v[1]">
+            </li>
+        </ul>
+
+        <hr>
+
+        <div class="d-grid gap-2 mt-3">
+            <button class="btn btn-primary" type="submit" (click)="salvar()">salvar</button>
+        </div>
+    </div>
+</div>

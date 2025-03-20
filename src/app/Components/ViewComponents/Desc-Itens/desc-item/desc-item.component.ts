@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Compromisso } from '../../../interfaces/compromisso';
+import { Compromisso } from '../../../../interfaces/compromisso';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 

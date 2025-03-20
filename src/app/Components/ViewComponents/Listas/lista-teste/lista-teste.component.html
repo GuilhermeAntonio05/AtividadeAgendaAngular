@@ -1,0 +1,41 @@
+<div class="container mt-3 mb-3 backgroud-white p-5 rounded">
+    <div class="d-flex justify-content-end">
+        <button (click)="logout()">Logout</button>
+    </div>
+
+    <div class="w-5 h-2">
+        <h1 class="text-center">Agenda Online</h1>
+        <hr>
+            <h2 class="text-center">Compromisso</h2>
+        <hr>
+
+        <nav class="text-center">
+            <button (click)="goToComponentes()">Componentes</button>
+            <button (click)="goToContato()">Contato</button>
+            <button (click)="goToLocal()">Local</button>
+        </nav>
+        <hr>
+        <div class="text-center">
+            <button (click)="cadCompromisso()">Adicionar Compromisso</button>
+        </div>
+        <hr>
+
+        <ul>
+            <li *ngFor="let c of compromisso">
+                <div class="conteudoAgenda">
+                    <div>
+                        <h3>{{c.titulo}}</h3>
+                        <p>{{c.descricao}}</p>
+                        <p>{{c.data}}</p>
+                        <button (click)="visualizar(c.id)">visualizar</button>
+                    </div>
+
+                    <div class="icones">
+                        <button (click)="editar(c.id)">Editar</button>
+                        <button (click)="deletar(c.id)">Deletar</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

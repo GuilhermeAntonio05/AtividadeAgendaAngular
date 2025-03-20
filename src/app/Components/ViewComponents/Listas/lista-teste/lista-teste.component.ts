@@ -2,10 +2,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Compromisso } from '../../../interfaces/compromisso';
-import { authGuard } from '../../../Guard/auth.guard';
-import { AuthService } from '../../../Service/auth-service.service';
-import { Usuario } from '../../../interfaces/usuario';
+import { Compromisso } from '../../../../interfaces/compromisso';
+import { AuthService } from '../../../../Service/auth-service.service';
+import { Usuario } from '../../../../interfaces/usuario';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -15,14 +14,14 @@ import { switchMap } from 'rxjs/operators';
   styleUrl: './lista-teste.component.css'
 })
 export class ListaTesteComponent implements OnInit {
+
   private readonly API = "http://localhost:3000/compromisso"
   private readonly APIUSER = "http://localhost:3000/usuario"
 
   compromisso: Compromisso[] = []
   role: String | null = '';
   username: String | null = '';
-
-
+  botoesadm = false;
 
   constructor(private router: Router, private http: HttpClient, private service: AuthService) {
     this.role = this.service.getUserRole()
@@ -31,8 +30,9 @@ export class ListaTesteComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.role == "admin") {
-      this.http.get<Compromisso[]>(this.API).subscribe(data => { this.compromisso = data})
-    } 
+      this.http.get<Compromisso[]>(this.API).subscribe(data => { this.compromisso = data })
+      this.botoesadm = true
+    }
 
     //Else feito com ajuda do chatgpt
     else {
@@ -41,7 +41,7 @@ export class ListaTesteComponent implements OnInit {
           const usuarioEncontrado = usuarios.find(user => user.email === this.username); // Encontrar o usuário pelo email
           if (usuarioEncontrado) {
             const userId = usuarioEncontrado.id; // Pega o id do usuário encontrado
-            localStorage.setItem("userID",`${userId}`)
+            localStorage.setItem("userID", `${userId}`)
             return this.http.get<Compromisso[]>(`${this.API}?usuarioId=${userId}`); // Alterado para buscar compromissos pelo userId
           } else {
             throw new Error("Usuário não encontrado");
@@ -56,7 +56,21 @@ export class ListaTesteComponent implements OnInit {
           console.error(error);
         }
       );
+
+      this.botoesadm = false;
     }
+  }
+
+  goToComponentes() {
+    this.router.navigate(['/listaComponentes'])
+  }
+
+  goToLocal() {
+    this.router.navigate(['/listaLocais'])
+  }
+
+  goToContato() {
+    this.router.navigate(['/listaContatos'])
   }
 
   cadCompromisso() {
@@ -74,6 +88,14 @@ export class ListaTesteComponent implements OnInit {
   visualizar(id: any) {
     localStorage.setItem("compromissoID", `${id}`)
     this.router.navigate(["/descricao"])
+  }
+
+  deletarContato() {
+    this.router.navigate(["/delContatoPage"])
+  }
+
+  deletarLocal() {
+    this.router.navigate(["/delLocalPage"])
   }
 
   deletar(id: any) {

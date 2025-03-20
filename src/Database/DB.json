@@ -1,49 +1,40 @@
 {
   "compromisso": [
     {
-      "id": "5dad",
-      "titulo": "teste",
-      "descricao": "teste",
-      "data": "2025-03-18",
-      "hora": "21:48",
-      "contatoId": "4e7b",
-      "localId": "ed02",
-      "usuarioId": "7e6b"
-    },
-    {
-      "id": "e655",
-      "titulo": "testeIsac",
-      "descricao": "IsacMeuPato",
-      "data": "",
-      "hora": "",
-      "contatoId": "",
-      "localId": "",
-      "usuarioId": "7e6b"
-    },
-    {
-      "id": "7e59",
-      "titulo": "testeDaniel",
-      "descricao": "testedaniel",
+      "id": "cbbe",
+      "titulo": "nomeAndreGuilherme",
+      "descricao": "nomeAndre",
       "data": "2025-03-19",
-      "hora": "12:30",
-      "contatoId": "4e7b",
-      "localId": "ed02",
+      "hora": "21:19",
+      "contatoId": null,
+      "localId": "b3d8",
+      "usuarioId": "e7fc"
+    },
+    {
+      "id": "05bf",
+      "titulo": "festa dos 7 ",
+      "descricao": "festinha na casa dos 7",
+      "data": "2025-03-19",
+      "hora": "21:31",
+      "contatoId": "ed5e",
+      "localId": "b3d8",
       "usuarioId": "7e6b"
     }
   ],
   "contato": [
     {
-      "id": "4e7b",
-      "nome": "teste",
-      "telefone": "teste",
-      "email": "teste"
+      "id": "ed5e",
+      "nome": "é os 7",
+      "telefone": "77 7777-7777",
+      "email": "eos7@gmail.com",
+      "usuarioId": "7e6b"
     }
   ],
   "local": [
     {
-      "id": "ed02",
-      "nome": "teste",
-      "endereco": "teste"
+      "id": "b3d8",
+      "nome": "Cedup Hermann Hering",
+      "endereco": " R. Benjamin Constant, 857 - Escola Agrícola, Blumenau - SC, 89037-501"
     }
   ],
   "usuario": [
@@ -66,6 +57,13 @@
       "name": "testeGuilherme2",
       "email": "testeGuilherme2@gmail.com",
       "password": "testeGuilherme2",
+      "role": "user"
+    },
+    {
+      "id": "e7fc",
+      "name": "André Teste 32",
+      "email": "andre32teste@Gmail.com",
+      "password": "123",
       "role": "user"
     }
   ]

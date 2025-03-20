@@ -1,0 +1,36 @@
+<div class="container mt-3 mb-3 backgroud-white p-5 rounded">
+    <div class="w-5 h-2">
+        <h1 class="text-center">Agenda Online</h1>
+        <hr>
+            <h2 class="text-center">Local</h2>
+        <hr>
+
+        <nav class="text-center">
+            <button (click)="goToComponentes()">Componentes</button>
+            <button (click)="goToContato()">Contato</button>
+            <button (click)="goToLocal()">Local</button>
+        </nav>
+        <hr>
+        <div class="text-center">
+            <button (click)="cadLocal()">Adicionar Local</button>
+        </div>
+        <hr>
+
+        <ul>
+            <li *ngFor="let l of locais">
+                <div class="conteudoAgenda">
+                    <div>
+                        <h3>{{l.nome}}</h3>
+                        <p>{{l.endereco}}</p>
+                        <button (click)="visualizar(l.id)">visualizar</button>
+                    </div>
+
+                    <div class="icones">
+                        <button (click)="editar(l.id)">Editar</button>
+                        <button (click)="deletar(l.id)">Deletar</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
