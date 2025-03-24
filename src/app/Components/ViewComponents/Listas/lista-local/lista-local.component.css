@@ -16,5 +16,5 @@ ul{
 .icones{
     display: flex;
     justify-content: end;
-    background-color: red;
+    height: 50px;
 }

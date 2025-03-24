@@ -1,18 +1,21 @@
 <div class="container mt-3 mb-3 backgroud-white p-5 rounded">
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+    </div>
     <div class="w-5 h-2">
         <h1 class="text-center">Agenda Online</h1>
         <hr>
             <h2 class="text-center">Local</h2>
         <hr>
 
-        <nav class="text-center">
-            <button (click)="goToComponentes()">Componentes</button>
-            <button (click)="goToContato()">Contato</button>
-            <button (click)="goToLocal()">Local</button>
+        <nav class="text-center w-5">
+            <button class="btn btn-primary" (click)="goToComponentes()">Componentes</button>
+            <button class="btn btn-primary m-1" (click)="goToContato()">Contato</button>
+            <button class="btn btn-primary" (click)="goToLocal()">Local</button>
         </nav>
         <hr>
         <div class="text-center">
-            <button (click)="cadLocal()">Adicionar Local</button>
+            <button class="btn btn-success" (click)="cadLocal()">Adicionar Local</button>
         </div>
         <hr>
 
@@ -22,12 +25,12 @@
                     <div>
                         <h3>{{l.nome}}</h3>
                         <p>{{l.endereco}}</p>
-                        <button (click)="visualizar(l.id)">visualizar</button>
+                        <button class="btn btn-primary" (click)="visualizar(l.id)">visualizar</button>
                     </div>
 
                     <div class="icones">
-                        <button (click)="editar(l.id)">Editar</button>
-                        <button (click)="deletar(l.id)">Deletar</button>
+                        <button class="text-white btn btn-warning" (click)="editar(l.id)">Editar</button>
+                        <button class="btn btn-danger" (click)="deletar(l.id)">Deletar</button>
                     </div>
                 </div>
             </li>

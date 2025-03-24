@@ -2,7 +2,7 @@
     <div class="w-5 h-2">
         <h1 class="text-center">Cadastro Usuario</h1>
         <hr>
-        <form [formGroup]="login" (ngSubmit)="cadastrar()" src="lista">
+        <form [formGroup]="cadastro" (ngSubmit)="cadastrar()" src="lista">
 
             <label class="form-label mb-0">Nome</label>
             <input type="text" class="form-control" formControlName="name" placeholder="Insira seu nome">
@@ -13,8 +13,18 @@
             <label class="form-label mt-1 mb-0">senha</label>
             <input type="password" class="form-control" formControlName="password" placeholder="Insira sua senha">
 
+            <label class="form-label mt-1 mb-0">Tipo de Usuário</label>
+            <select class="form-control" formControlName="role">
+                <option value="user">Usuário</option>
+                <option value="admin">Administrador</option>
+            </select>
+         
             <div class="d-grid gap-2 mt-3">
                 <button class="btn btn-primary" type="submit">Salvar</button>
+            </div>
+
+            <div>
+                <button (click)="goToLogin()" class="btn btn-link">Voltar ao registro</button>
             </div>
         </form>
     </div>

@@ -11,3 +11,11 @@ body {
 .backgroud-white {
   background-color: white;
 }
+
+button{
+  background-color: rgb(0, 89, 255);
+  border: 0px;
+  padding: 10px;
+  color: white;
+  border-radius: 50px;
+}

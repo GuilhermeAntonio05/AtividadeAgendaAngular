@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from '../../../interfaces/usuario';
 
@@ -19,31 +19,16 @@ export class PagLoginComponent {
   informacoesLogin: Usuario[] = []
 
   login = new FormGroup({
-    email: new FormControl(""),
-    password: new FormControl(""),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [Validators.required]),
   });
 
-  async logar() {
-   this.http.post<Usuario>(this.PROFESSOR_API, this.login.value).subscribe(response => {localStorage.setItem("token", `${response.token}`),this.router.navigate(['/listaComponentes']);})
-    /*
-        this.http.get<Usuario[]>(this.API).subscribe(data => {
-          this.informacoesLogin = data;
-    
-          const usuarioEncontrado = this.informacoesLogin.find(
-            usuario => usuario.email == this.login.value.email && usuario.password == this.login.value.password
-          );
-    
-          const valorIndex = this.informacoesLogin.findIndex(
-            usuario => usuario.email == this.login.value.email && usuario.password == this.login.value.password
-          );
-    */
-    //if (usuarioEncontrado) {
-    
-    //   } else {
-    ////    alert("Usuário não encontrado!");
-    //  }
+  logar() {
+    this.http.post<Usuario>(this.PROFESSOR_API, this.login.value).subscribe(
+      response => { localStorage.setItem("token", `${response.token}`), this.router.navigate(['/listaComponentes']); },
+      error => alert("Usuário não encontrado!")
+    )
   }
-
 
   cadastrar() {
     this.router.navigate(['/cadastroUsuario'])

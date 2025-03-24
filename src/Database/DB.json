@@ -1,16 +1,6 @@
 {
   "compromisso": [
     {
-      "id": "cbbe",
-      "titulo": "nomeAndreGuilherme",
-      "descricao": "nomeAndre",
-      "data": "2025-03-19",
-      "hora": "21:19",
-      "contatoId": null,
-      "localId": "b3d8",
-      "usuarioId": "e7fc"
-    },
-    {
       "id": "05bf",
       "titulo": "festa dos 7 ",
       "descricao": "festinha na casa dos 7",
@@ -19,6 +9,16 @@
       "contatoId": "ed5e",
       "localId": "b3d8",
       "usuarioId": "7e6b"
+    },
+    {
+      "id": "beb0",
+      "titulo": "testeAndré",
+      "descricao": "testeAndré",
+      "data": "2025-03-23",
+      "hora": "21:57",
+      "contatoId": "ed5e",
+      "localId": "b3d8",
+      "usuarioId": "e7fc"
     }
   ],
   "contato": [
@@ -64,6 +64,20 @@
       "name": "André Teste 32",
       "email": "andre32teste@Gmail.com",
       "password": "123",
+      "role": "user"
+    },
+    {
+      "id": "dbf8",
+      "name": "guilherme",
+      "email": "guilhermeAdm2@gmail.com",
+      "password": "guilhermeAdm2",
+      "role": "admin"
+    },
+    {
+      "id": "e325",
+      "name": "testes do gui",
+      "email": "gui@gmail.com",
+      "password": "12345",
       "role": "user"
     }
   ]

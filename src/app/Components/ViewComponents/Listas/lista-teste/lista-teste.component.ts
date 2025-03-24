@@ -21,7 +21,6 @@ export class ListaTesteComponent implements OnInit {
   compromisso: Compromisso[] = []
   role: String | null = '';
   username: String | null = '';
-  botoesadm = false;
 
   constructor(private router: Router, private http: HttpClient, private service: AuthService) {
     this.role = this.service.getUserRole()
@@ -31,7 +30,6 @@ export class ListaTesteComponent implements OnInit {
   ngOnInit(): void {
     if (this.role == "admin") {
       this.http.get<Compromisso[]>(this.API).subscribe(data => { this.compromisso = data })
-      this.botoesadm = true
     }
 
     //Else feito com ajuda do chatgpt
@@ -42,7 +40,7 @@ export class ListaTesteComponent implements OnInit {
           if (usuarioEncontrado) {
             const userId = usuarioEncontrado.id; // Pega o id do usuário encontrado
             localStorage.setItem("userID", `${userId}`)
-            return this.http.get<Compromisso[]>(`${this.API}?usuarioId=${userId}`); // Alterado para buscar compromissos pelo userId
+            return this.http.get<Compromisso[]>(`${this.API}?usuarioId=${userId}`); // busca pelo atributo usuarioID
           } else {
             throw new Error("Usuário não encontrado");
           }
@@ -56,8 +54,6 @@ export class ListaTesteComponent implements OnInit {
           console.error(error);
         }
       );
-
-      this.botoesadm = false;
     }
   }
 
@@ -109,7 +105,7 @@ export class ListaTesteComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem("compromissoID"),
+    localStorage.removeItem("compromissoID"), localStorage.removeItem("localID"), localStorage.removeItem("contatoID"),
       localStorage.removeItem("userID"),
       localStorage.removeItem("token")
     this.router.navigate([""])

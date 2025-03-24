@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { authGuard } from '../../../Guard/auth.guard';
 import { AuthService } from '../../../Service/auth-service.service';
 
 @Component({
@@ -34,5 +33,9 @@ export class UpdateLocalComponent implements OnInit {
   salvar() {
     this.http.put<any>(this.API.concat(`/${localStorage.getItem("localID")}`), Object.fromEntries(this.valor)).subscribe()
     this.router.navigate(["/listaLocais"])
+  }
+
+  goToLista() {
+    this.router.navigate(['listaLocais'])
   }
 }

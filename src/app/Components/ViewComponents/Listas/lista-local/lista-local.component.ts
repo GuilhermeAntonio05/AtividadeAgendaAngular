@@ -25,7 +25,7 @@ export class ListaLocalComponent implements OnInit {
   ngOnInit(): void {
     if (this.role == "admin") {
       this.http.get<Local[]>(this.API).subscribe(data => { this.locais = data })
-    } else{
+    } else {
       this.router.navigate(["listaComponentes"])
     }
   }
@@ -59,5 +59,14 @@ export class ListaLocalComponent implements OnInit {
   editar(id: any) {
     localStorage.setItem("localID", `${id}`)
     this.router.navigate(["/updateLocal"])
+  }
+
+  logout() {
+    localStorage.removeItem("compromissoID"),
+      localStorage.removeItem("localID"),
+      localStorage.removeItem("contatoID"),
+      localStorage.removeItem("userID"),
+      localStorage.removeItem("token")
+    this.router.navigate([""])
   }
 }

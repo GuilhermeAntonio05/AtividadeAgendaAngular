@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Usuario } from '../../../interfaces/usuario';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,7 +21,12 @@ export class UpdatePageComponent implements OnInit {
   }
 
   salvar() {
-    this.http.put<any>(this.API.concat(`/${localStorage.getItem("compromissoID")}`),Object.fromEntries(this.valor)).subscribe()
+    this.http.put<any>(this.API.concat(`/${localStorage.getItem("compromissoID")}`), Object.fromEntries(this.valor)).subscribe()
     this.router.navigate(["/listaComponentes"])
   }
+
+  goToLista() {
+    this.router.navigate(['listaComponentes'])
+  }
+
 }

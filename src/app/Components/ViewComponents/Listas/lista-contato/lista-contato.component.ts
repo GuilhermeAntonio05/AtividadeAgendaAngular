@@ -85,4 +85,13 @@ export class ListaContatoComponent {
   cadContato() {
     this.router.navigate(["cadastroContato"])
   }
+
+  logout() {
+    localStorage.removeItem("compromissoID"),
+      localStorage.removeItem("localID"),
+      localStorage.removeItem("contatoID"),
+      localStorage.removeItem("userID"),
+      localStorage.removeItem("token")
+    this.router.navigate([""])
+  }
 }
